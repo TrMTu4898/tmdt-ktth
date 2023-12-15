@@ -1,0 +1,35 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.master.cs" Inherits="TranMinhTu_0551.MasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+</asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+       <div>
+    <table style="width: 100%">
+        <tr>
+            <td style="width: 25%">DANH MỤC HOA
+        <asp:DataList ID="DataList1" runat="server">
+            <ItemTemplate>
+                <asp:LinkButton ID="LinkButton1" runat="server" CommandArgument='<%# Eval("MADM") %>' OnClick="LinkButton1_Click" Text='<%# Eval("TENDM") %>'></asp:LinkButton>
+            </ItemTemplate>
+        </asp:DataList>
+            </td>
+            <td>
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </td>
+            <td style="width: 25%">
+                <asp:Login ID="Login1" runat="server" TitleText="Đăng nhập" OnAuthenticate="Login1_Authenticate"></asp:Login>
+            </td>
+        </tr>
+    </table>
+</div>
+    </form>
+</body>
+</html>
